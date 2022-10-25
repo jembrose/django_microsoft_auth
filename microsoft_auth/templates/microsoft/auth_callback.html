@@ -5,13 +5,14 @@
     <p>{% trans "This window should automatically close. If it does not, it should be save to close after a few seconds." %}</p>
     <pre>{{ message }}</pre>
     <script>
-      document.addEventListener("DOMContentLoaded", function(event) {
-        // post message to parent window
-        console.log("posting message to {{ base_url }}");
-        console.log(window.opener);
-        window.opener.postMessage({{ message }}, "{{ base_url }}");
-        window.close();
-      });
+            document.addEventListener("DOMContentLoaded", function (event) {
+                // post message to parent window
+                // console.log("posting message to {{ base_url }}");
+                // console.log({{ next }});
+                // window.opener.location.replace('/admin/');
+                window.open(window.location.origin, "login");
+                window.close();
+              });
     </script>
   </body>
 </html>
